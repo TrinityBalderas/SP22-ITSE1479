@@ -28,7 +28,7 @@ def main():
     jumpTable['1'] = smileyFunction       # Smiley - call to function goes here
     jumpTable['2'] = stub                 # Alvarez - call to function goes here
     jumpTable['3'] = stub                 # Appiah - call to function goes here
-    jumpTable['4'] = stub                 # Balderas - call to function goes here
+    jumpTable['4'] = balderasRPS          # Balderas - call to function goes here
     jumpTable['5'] = stub                 # Butler - call to function goes here
     jumpTable['6'] = stub                 # Kennedy - call to function goes here
     jumpTable['7'] = stub                 # Long - call to function goes here
@@ -158,6 +158,72 @@ def smileyFib(numberOfTimes):
     print()
     print()
 
+import random
+def balderasRPS():
+    done = False
+    while not done:
+        print(
+    """**************************************
+    * Rock Paper Scissors *
+    **************************************
+    (1) Rock
+    (2) Paper
+    (3) Scissors
+
+    (x) Exit""")
+        user = input("pick an option ")
+        comput = random.randint(1, 3)
+        #Tie
+        if (comput == 1 and user == '1'):
+            print("You picked Rock \nThe computer picked Rock \nYou Tied")
+        elif(comput == 2 and user == '2'):
+            print("You picked Paper \nThe computer picked Paper \nYou Tie")
+        elif(comput == 3 and user == '3'):
+            print("You picked Scissors \nThe computer picked Scissors \nYou Tie")
+
+        #Computer Rock
+        elif (comput == 1 and user == '2'):
+            print("The computer picked Rock \nYou picked Paper \nYou Win")
+        elif (comput == 1 and user == '3'):
+            print("The computer picked Rock \nYou picked Scissors \nYou Lose")
+
+        #Computer Paper
+        elif (comput == 2 and user == '1'):
+            print("The computer picked Paper \nYou picked Rock \nYou Lose")
+        elif (comput == 2 and user == '3'):
+            print("The computer picked Paper \nYou picked Scissors \nYou Win")
+
+        #Computer Scissors
+        elif (comput == 3 and user == '1'):
+            print("The computer picked Scissors \nYou picked Rock \nYou Win")
+        elif (comput == 3 and user == '2'):
+            print("The computer picked Scissors \nYou picked Paper \nYou Lose")
+
+        #User Rock
+        elif (user == '1' and comput == 2):
+            print("The computer picked Paper \nYou picked Rock \nYou Lose")
+        elif (user == '1' and comput == 3):
+            print("The computer picked Scissors \nYou picked Rock \nYou Win")
+
+        #User Paper
+        elif (user == '2' and comput == 1):
+            print("The computer picked Rock \nYou picked Paper \nYou Win")
+        elif (user == '2' and comput == 3):
+            print("The computer picked Scissors \nYou picked Paper \nYou Lose")
+
+        #User Scissors
+        elif (user == '3' and comput == 1):
+            print("The computer picked Rock \nYou picked Scissors \nYou Lose")
+        elif (user == '3' and comput == 2):
+            print("The computer picked Paper \nYou picked Scissors \nYou Win")
+
+        #End the game
+        elif (user == 'x' or user == 'X'):
+            done = True
+            print("End of game, thank you for playing!:)")
+        #Error message
+        elif((user != '1') or (user != '2') or (user != '3') or (user != 'x') or (user != 'X')):
+            print("Error: that is not an option, try again") 
 #*****************************************************************
 # Please leave me alone,
 #   Sincerely,
